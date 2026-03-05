@@ -53,7 +53,7 @@ jobs:
           go-version-file: go.mod
           cache: true
       - name: GoReleaser
-        uses: goreleaser/goreleaser-action@v6
+        uses: goreleaser/goreleaser-action@v7
         if: startsWith(github.ref, 'refs/tags/')
         with:
           version: latest
