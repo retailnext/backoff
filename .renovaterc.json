@@ -6,5 +6,8 @@
   ],
   "postUpdateOptions": [
     "gomodTidy"
+  ],
+  "schedule": [
+    "on the 1st day of the month"
   ]
 }

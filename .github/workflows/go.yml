@@ -6,6 +6,9 @@ on:
     branches:
       - master
   pull_request:
+env:
+  # renovate: datasource=github-releases depName=golangci/golangci-lint versioning=semver-coerced
+  GOLANGCI_LINT_VERSION: "v2.10.1"
 jobs:
   lint:
     name: Lint
@@ -19,9 +22,9 @@ jobs:
           go-version-file: go.mod
           cache: true
       - name: golangci-lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v9
         with:
-          version: v1.64
+          version: ${{ env.GOLANGCI_LINT_VERSION }}
   build:
     name: Build
     runs-on: ubuntu-latest
